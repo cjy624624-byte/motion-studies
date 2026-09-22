@@ -44,11 +44,12 @@ node node_modules/vite/bin/vite.js --configLoader native --host 127.0.0.1
 
 ## Cloudflare 배포
 
-Cloudflare Pages 직접 업로드용 설정을 `wrangler.jsonc`에 추가했습니다.
+공개 주소: https://motion-studies-9x1.pages.dev/
 
-```sh
-npx wrangler login
-npm run deploy
-```
+Cloudflare Pages 프로젝트 `motion-studies`는 GitHub 저장소의 `main` 브랜치와 연결되어 있습니다. GitHub에 변경 사항을 push하면 자동으로 빌드·배포됩니다.
 
-첫 배포 전 `npx wrangler pages project create motion-studies --production-branch main`으로 프로젝트를 생성합니다. 직접 업로드 방식이며 GitHub push만으로 자동 배포되지는 않습니다. Cloudflare 인증 정보는 저장소에 포함하지 않습니다.
+- 빌드 명령: `npm run build`
+- 빌드 결과 폴더: `dist`
+- 설정 파일: `wrangler.jsonc`
+
+필요한 경우 Wrangler 로그인 후 `npm run deploy`로 수동 배포할 수도 있습니다. Cloudflare 인증 정보는 저장소에 포함하지 않습니다.
