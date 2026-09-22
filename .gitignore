@@ -1,0 +1,9 @@
+node_modules/
+dist/
+backups/
+research/
+.impeccable/
+*.log
+.env
+.env.*
+!.env.example
