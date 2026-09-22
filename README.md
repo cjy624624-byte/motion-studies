@@ -41,3 +41,14 @@ node node_modules/vite/bin/vite.js --configLoader native --host 127.0.0.1
 ## 분위기·배치 변경
 
 사용자 요청에 따라 3D/스크롤 구조는 유지하고 코퍼·아이보리 색상, 좌우 분할 첫 화면, 금속성 궤도 조형물, 프로젝트 좌측 설명 레이아웃으로 변경했습니다. 프로젝트 정보·영상·원본 링크는 유지합니다. 변경 전 소스는 `backups/original-recreation/`에 보관했습니다.
+
+## Cloudflare 배포
+
+Cloudflare Pages 직접 업로드용 설정을 `wrangler.jsonc`에 추가했습니다.
+
+```sh
+npx wrangler login
+npm run deploy
+```
+
+첫 배포 전 `npx wrangler pages project create motion-studies --production-branch main`으로 프로젝트를 생성합니다. 직접 업로드 방식이며 GitHub push만으로 자동 배포되지는 않습니다. Cloudflare 인증 정보는 저장소에 포함하지 않습니다.
